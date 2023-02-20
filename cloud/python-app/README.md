@@ -1,4 +1,4 @@
-# [Python App](https://github.com/ARES-Internal-Software/interviews)
+# Python App
 
 <https://github.com/ARES-Internal-Software/interviews/tree/main/cloud/python-app>
 
