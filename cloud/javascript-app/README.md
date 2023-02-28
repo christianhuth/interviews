@@ -8,12 +8,13 @@
 - Node Version 18.x
 - Port: 3000
 - Environment variables:
-  - DB_HOST (Datenbank Host MySql)
+  - DB_HOST (Database Host for MySql)
   - DB_PORT=3306 (Standard)
   - DB_USERNAME
   - DB_PASSWORD
-  - DB_DATABASE (Datenbankname)
+  - DB_DATABASE (Database name)
   - APP_PORT=3000 (Standard)
+  - DB_LESS=no (If no or option is missing then it uses a database. If yes then simple app without database and api.)
 
 ## Swagger integration
 
