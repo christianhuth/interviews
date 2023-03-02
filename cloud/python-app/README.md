@@ -8,4 +8,4 @@
 - Python Version >=3.9
 - Port: 5000
 - Environment Variablen:
-  - USERNAME [string]
+  - APP_USERNAME [string]

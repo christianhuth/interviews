@@ -9,7 +9,7 @@ import os
 
 @app.route("/")
 def index():    
-    user = os.environ.get("USERNAME", "")    
+    user = os.environ.get("APP_USERNAME", "")    
     return render_template("index.html", username=user)
 
 @app.route("/info")
