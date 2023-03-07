@@ -43,6 +43,7 @@ npm install
 ```bash
 npm run build
 ```
+
 **The html folder must be copied manually into the container, as it is not created automatically during the build process. It must be located in the app folder at the same level as the dist folder.**
 
 ## Running the app
