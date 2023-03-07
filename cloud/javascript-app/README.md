@@ -38,6 +38,12 @@
 npm install
 ```
 
+## Build
+
+```bash
+npm run build
+```
+
 ## Running the app
 
 ```bash
