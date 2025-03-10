@@ -1,0 +1,24 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+  name: ares
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: ares.christianhuth.de
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ares
+                port:
+                  number: 80
+  tls:
+    - secretName: ares.christianhuth.de-tls
+      hosts:
+        - ares.christianhuth.de

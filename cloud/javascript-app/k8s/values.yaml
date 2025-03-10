@@ -1,0 +1,6 @@
+---
+mysql:
+  auth:
+    database: ares
+    existingSecret: ares
+    username: ares

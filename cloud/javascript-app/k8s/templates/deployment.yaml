@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ares
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ares
+  template:
+    metadata:
+      labels:
+        app: ares
+    spec:
+      serviceAccountName: ares
+      containers:
+        - name: ares
+          image: ttl.sh/christianhuth/ares_app:8h
+          env:
+            - name: APP_PORT
+              value: "3000"
+            - name: DB_HOST
+              value: {{ (include "mysql.primary.fullname" .Subcharts.mysql) | quote }}
+            - name: DB_PORT
+              value: {{ .Values.mysql.primary.service.ports.mysql | quote }}
+            - name: DB_USERNAME
+              value: {{ .Values.mysql.auth.username | quote }}
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ares
+                  key: mysql-password
+            - name: DB_DATABASE
+              value: {{ .Values.mysql.auth.database | quote }}
+            - name: DB_LESS
+              value: "no"
+          ports:
+            - containerPort: 3000
